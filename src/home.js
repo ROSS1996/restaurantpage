@@ -1,6 +1,7 @@
 const content = document.getElementById('content')
 
 const main = document.createElement('main')
+main.id = 'main'
 const about = document.createElement('h2')
 about.innerText = 'About us'
 const aboutTxt = document.createElement('p')
@@ -25,8 +26,14 @@ addressTxt.innerText = 'Av. Pres. Castelo Branco, Portão 3 - Maracanã, Rio de 
 main.appendChild(address)
 main.appendChild(addressTxt)
 
-function loadHome() {
+function firstLoad() {
     content.appendChild(main)
 }
 
-export { loadHome };
+function loadHome() {
+    const old = document.getElementById('main')
+    console.log(`Old: ${old} | New: ${main}`)
+    content.replaceChild(main, old)
+}
+
+export { firstLoad, loadHome };
