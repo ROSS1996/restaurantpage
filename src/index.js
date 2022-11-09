@@ -10,6 +10,7 @@ const content = document.getElementById('content')
 const header = document.createElement('header')
 const title = document.createElement('h1')
 title.innerText = name
+title.id = 'PageTitle'
 header.appendChild(title)
 
 const tabs = document.createElement('nav')

@@ -7,35 +7,47 @@ menu.innerText = 'Menu'
 main.appendChild(menu);
 
 
+const menuDiv = document.createElement('div')
+menuDiv.id = 'menuitems'
+
+const drinksDiv = document.createElement('div')
+drinksDiv.classList.add('itemsList')
+
 const drinks = document.createElement('h3')
 drinks.innerText = 'Drinks'
-main.appendChild(drinks);
-
-
+drinksDiv.appendChild(drinks);
 const water = document.createElement('p')
 water.innerText = "Water: $1"
-main.appendChild(water);
-
+drinksDiv.appendChild(water);
 const soda = document.createElement('p')
 soda.innerText = "Soda: $2"
-main.appendChild(soda);
-
+drinksDiv.appendChild(soda);
 const beer = document.createElement('p')
 beer.innerText = "Beer: $5"
-main.appendChild(beer);
+drinksDiv.appendChild(beer);
+
+menuDiv.appendChild(drinksDiv)
+
+const foodsDiv = document.createElement('div')
 
 const foods = document.createElement('h3')
 foods.innerText = 'Foods'
-main.appendChild(foods);
+foodsDiv.appendChild(foods);
 const spaghetti = document.createElement('p')
 spaghetti.innerText = "Spaghetti: $10"
+foodsDiv.appendChild(spaghetti);
 const salad = document.createElement('p')
 salad.innerText = "Salad: $5"
+foodsDiv.appendChild(salad);
 const soup = document.createElement('p')
 soup.innerText = "Soup: $8"
-main.appendChild(spaghetti);
-main.appendChild(salad);
-main.appendChild(soup);
+foodsDiv.appendChild(soup);
+
+foodsDiv.classList.add('itemsList')
+
+menuDiv.appendChild(foodsDiv)
+
+main.appendChild(menuDiv)
 
 
 function loadMenu() {
