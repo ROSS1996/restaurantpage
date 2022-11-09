@@ -1,8 +1,9 @@
 import { firstLoad, loadHome } from "./home";
 import { loadContact } from "./contact";
 import { loadMenu } from "./menu";
+import './style.css';
 
-let name = 'Dump Restaurant'
+let name = 'Generic Restaurant'
 
 const content = document.getElementById('content')
 
@@ -13,13 +14,17 @@ header.appendChild(title)
 
 const tabs = document.createElement('nav')
 const tabsList = document.createElement('ul')
+tabsList.classList.add('tabs')
 
 const tabHome = document.createElement('li')
 tabHome.innerText = 'Home'
+tabHome.classList.add('tabLink')
 const tabMenu = document.createElement('li')
 tabMenu.innerText = 'Menu'
+tabMenu.classList.add('tabLink')
 const tabContact = document.createElement('li')
 tabContact.innerText = 'Contact'
+tabContact.classList.add('tabLink')
 
 tabsList.appendChild(tabHome)
 tabsList.appendChild(tabMenu)
@@ -27,16 +32,16 @@ tabsList.appendChild(tabContact)
 
 tabs.appendChild(tabsList)
 
-tabHome.addEventListener('click', function(){
+tabHome.addEventListener('click', function () {
     loadHome();
 })
 
 
-tabMenu.addEventListener('click', function(){
+tabMenu.addEventListener('click', function () {
     loadMenu();
 })
 
-tabContact.addEventListener('click', function(){
+tabContact.addEventListener('click', function () {
     loadContact();
 })
 
